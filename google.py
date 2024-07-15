@@ -68,12 +68,12 @@ if st.button("Scrape Google Suggestions"):
     ]
 
     prepositions = [
-        "To {query}", "Without {query}", "With {query}", "Can {query}",
-        "For {query}", "Is {query}", "Near {query}"
+        "To {query}", "Without {query}", "With {query}", "On {query}",
+        "For {query}", "In {query}", "Near {query}", "Of {query}", "At {query}"
     ]
 
     competitors = [
-        "{query} Vs", "{query} Or", "{query} Like", "{query} And", "{query} Alternative"
+        "Vs {query}", "Or {query}", "Like {query}", "And {query}", "Alternative {query}"
     ]
 
     complaints = [
