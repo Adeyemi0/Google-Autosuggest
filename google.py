@@ -36,7 +36,7 @@ def save_to_csv(categorized_results, filename):
 # Taxonomy definition
 taxonomy = {
     "Questions": ["Will", "Why", "Which", "When", "What", "How", "Can", "Are", "Does"],
-    "Prepositions": ["To", "Without", "With", "Can", "For", "Is", "Near"],
+    "Prepositions": ["To", "Without", "With", "For", "Near","In","At","On","Of"],
     "Competitors": ["Vs", "Or", "Like", "And", "Alternative"],
     "Complaints": ["Issue", "Problem", "Complaints", "Not working", "Refund policy", "Discount", "Reviews"],
     "Alphabet": [chr(i) for i in range(ord('a'), ord('z') + 1)]
