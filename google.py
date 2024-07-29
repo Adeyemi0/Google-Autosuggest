@@ -86,7 +86,7 @@ if st.button("Scrape Google Suggestions"):
     results = []
     results.extend(get_suggestions(query, questions))
     results.extend(get_suggestions(query, prepositions))
-    results.extend(get_suggestions(query, competitors))
+    results.extend(get_suggestions(query, comparison))
     results.extend(get_suggestions(query, complaints))
     results.extend(get_suggestions(query, alphabet))
     
