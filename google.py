@@ -38,7 +38,6 @@ def save_to_csv(categorized_results, filename):
 taxonomy = {
     "Questions": ["Will", "Why", "Which", "When", "What", "How", "Can", "Are", "Does"],
     "Prepositions": ["To", "Without", "With", "For", "Near", "In", "At", "On", "Of"],
-    "Comparison": ["Vs", "Or", "Like", "And", "Alternative"],
     "Complaints": ["Issue", "Problem", "Complaints", "Not working", "Refund policy", "Discount", "Reviews"],
     "Alphabet": [chr(i) for i in range(ord('a'), ord('z') + 1)]
 }
@@ -73,10 +72,6 @@ if st.button("Scrape Google Suggestions"):
         "For {query}", "In {query}", "Near {query}", "Of {query}", "At {query}"
     ]
 
-    comparison = [
-        "{query} vs", "{query} or", "{query} like", "{query} and", "{query} alternative"
-    ]
-
     complaints = [
         "Issue {query}", "Problem {query}", "Complaints {query}",
         "Not working {query}", "Refund policy {query}", "Discount {query}", "Reviews {query}"
@@ -87,7 +82,6 @@ if st.button("Scrape Google Suggestions"):
     results = []
     results.extend(get_suggestions(query, questions))
     results.extend(get_suggestions(query, prepositions))
-    results.extend(get_suggestions(query, comparison))
     results.extend(get_suggestions(query, complaints))
     results.extend(get_suggestions(query, alphabet))
     
@@ -107,13 +101,6 @@ if st.button("Scrape Google Suggestions"):
     prepositions_suggestions = categorized_results.get("Prepositions", [])
     if prepositions_suggestions:
         st.write(prepositions_suggestions)
-    else:
-        st.write("No data found")
-
-    st.subheader("Comparison:")
-    comparison_suggestions = categorized_results.get("Comparison", [])
-    if comparison_suggestions:
-        st.write(comparison_suggestions)
     else:
         st.write("No data found")
 
