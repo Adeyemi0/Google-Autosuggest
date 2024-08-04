@@ -74,7 +74,7 @@ if st.button("Scrape Google Suggestions"):
     ]
 
     comparison = [
-        "Vs {query}", "Or {query}", "Like {query}", "And {query}", "Alternative {query}"
+        "{query} Vs", "{query} Or", "{query} Like", "{query} And", "Alternative to {query}"
     ]
 
     complaints = [
@@ -110,7 +110,7 @@ if st.button("Scrape Google Suggestions"):
     else:
         st.write("No data found")
 
-    st.subheader("Competitors:")
+    st.subheader("Comparison:")
     competitors_suggestions = categorized_results.get("Competitors", [])
     if competitors_suggestions:
         st.write(competitors_suggestions)
