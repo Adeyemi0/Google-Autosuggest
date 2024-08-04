@@ -74,7 +74,7 @@ if st.button("Scrape Google Suggestions"):
     ]
 
     comparison = [
-        "{query} vs", "{query} or", "{query} like", "{query} and", "alternative to {query}"
+        "vs {query}", "or {query}", "like {query}", "and {query}", "{query} alternative to"
     ]
 
     complaints = [
