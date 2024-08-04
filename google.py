@@ -9,7 +9,8 @@ def get_suggestions(query, categories):
         full_query = category.replace("{query}", query)
         suggestions = ES.query(full_query)
         for suggestion in suggestions:
-            results.append((category, suggestion))
+            if query.lower() in suggestion.lower():
+                results.append((category, suggestion))
     return results
 
 # Function to categorize results
@@ -36,7 +37,7 @@ def save_to_csv(categorized_results, filename):
 # Taxonomy definition
 taxonomy = {
     "Questions": ["Will", "Why", "Which", "When", "What", "How", "Can", "Are", "Does"],
-    "Prepositions": ["To", "Without", "With", "For", "Near","In","At","On","Of"],
+    "Prepositions": ["To", "Without", "With", "For", "Near", "In", "At", "On", "Of"],
     "Comparison": ["Vs", "Or", "Like", "And", "Alternative"],
     "Complaints": ["Issue", "Problem", "Complaints", "Not working", "Refund policy", "Discount", "Reviews"],
     "Alphabet": [chr(i) for i in range(ord('a'), ord('z') + 1)]
